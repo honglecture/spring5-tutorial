@@ -1,0 +1,155 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+/*-- reset --*/
+*{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    list-style-type: none;
+}
+
+a {
+    color: #000000; 
+    text-decoration: none; 
+    outline: none;
+    cursor: pointer;
+}
+
+a:hover, a:active, a:link, a:visited {
+    text-decoration: none; 
+    color:#000000;
+}
+
+/*----font----*/
+body {
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+.jejugothic{ /** 폰트 영문 이름 지정 **/
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+.font-nm{
+    font-size: 13px;
+}
+
+.font-lg{
+    font-size: 17px;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+/*---button---*/
+.button{
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    color: #757575;
+}
+
+.button:hover{
+    border: 1px solid #c6c6c6;
+    background-color: #f1f1f1;
+    color: #222222;
+}
+
+.button.button-lg{
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+}
+
+.button.button-nm{
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/*---text-box---*/
+.text{
+    border: none;
+    background-color: #f1f3f4;
+    color: #80868d;
+}
+
+.text.text-lg{
+    height: 40px;
+    width: 500px;
+    border-radius: 15px;
+    padding: 0px 10px;
+}
+
+.text.text-nm{
+    height: 40px;
+    width: 300px;
+    border-radius: 15px;
+    padding: 0px 10px;
+}
+
+.text:hover{
+    border: none;
+    background-color: #e8eaed;
+    color: #80868d;
+}
+
+.text:focus{
+    outline: none;
+}
+
+/*---position---*/
+.inline-center{
+    text-align: center;
+}
+
+.content-margin{
+    margin-top: 15px;
+}
+
+/*---custom class---*/
+.content-container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.border-box{
+    border: 1px solid black;
+    padding: 12px 20px;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.button-group button{
+    margin : 0px 10px;
+}
+
+.alert{
+    color: #ff0000;
+}

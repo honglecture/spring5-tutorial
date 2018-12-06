@@ -9,59 +9,58 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.tutorial.web.dao.MemberDao;
-import com.tutorial.web.entity.Member;
-import com.tutorial.web.entity.Reply;
+import com.tutorial.web.dao.RoleDao;
+import com.tutorial.web.entity.Role;
 
 @Repository
-public class HibernateMemberDao implements MemberDao {
+public class HibernateRoleDao implements RoleDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override
 	@Transactional
-	public Member get(String memberId) {
+	public int insert(Role role) {
 		Session session = sessionFactory.getCurrentSession();
-		Member member = session.get(Member.class, memberId);
-		return member;
-	}
-
-	@Override
-	@Transactional
-	public int insert(Member member) {
-		Session session = sessionFactory.getCurrentSession();
-		Object id = session.save(member);
-		if (id != null)
+		Object id = session.save(role);
+		if(id!=null)
 			return 1;
 		return 0;
 	}
 
 	@Override
 	@Transactional
-	public int update(Member member) {
+	public int update(Role role) {
 		Session session = sessionFactory.getCurrentSession();
-		session.update(member);
+		session.update(role);
 		return 1;
 	}
 
 	@Override
 	@Transactional
-	public int delete(String id) {
+	public int delete(String name) {
 		Session session = sessionFactory.getCurrentSession();
-		Member member = new Member();
-		member.setId(id);
-		session.remove(member);
+		Role role = new Role();
+		role.setName(name);
+		session.remove(role);
 		return 1;
 	}
 
 	@Override
 	@Transactional
-	public List<Member> getList() {
+	public Role get(String name) {
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "from Member";
-		List<Member> list = session
-							.createQuery(hql, Member.class)	//SQL이 아니라 HQL이다. 주의!!
+		Role role = session.get(Role.class, name);
+		return role;
+	}
+
+	@Override
+	@Transactional
+	public List<Role> getList() {
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from Role";
+		List<Role> list = session
+							.createQuery(hql, Role.class)	//SQL이 아니라 HQL이다. 주의!!
 							.getResultList();
 		return list;
 	}

@@ -1,5 +1,10 @@
 package com.tutorial.web.service.hibernate;
 
-public class HibernateBoardService {
+import org.springframework.stereotype.Service;
+
+import com.tutorial.web.service.BoardService;
+
+@Service
+public class HibernateBoardService implements BoardService {
 
 }

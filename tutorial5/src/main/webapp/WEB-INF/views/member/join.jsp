@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<section class="inline-center content-margin">
+<script type="text/javascript" src="/resources/js/member/join.js"></script>	
+<section id="join-form" class="inline-center content-margin">
 	<h1>Join</h1>
-	<form>
+	<form method="post" enctype="multipart/form-data">
 		<div class="content-margin">
 			<input type="text" name="id" class="text text-lg" placeholder="ID" />
 		</div>
@@ -23,15 +24,12 @@
 				placeholder="NICKNAME" />
 		</div>
 		<div class="content-margin">
-			<label>BIRTH </label> <input name="birth" class="text text-nm" type="date" />
-		</div>
-		<div class="content-margin">
-			<label>PROFILE PICTURE </label> <input name="picture" type="file"
-				class="hidden">
-			<button type="button" class="button button-lg">SELECT</button>
+			<label>PROFILE PICTURE </label> 
+			<input name="photo-file" type="file" class="hidden">
+			<button type="button" class="button button-lg photo-button">SELECT</button>
 		</div>
 		<div>
-			<img alt="" src="">
+			<img class="image" alt="" src="">
 		</div>
 		<div class="content-margin button-group">
 			<button type="submit" class="button button-lg">SUBMIT</button>

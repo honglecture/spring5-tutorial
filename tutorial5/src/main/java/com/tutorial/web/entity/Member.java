@@ -2,25 +2,34 @@ package com.tutorial.web.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Member {
 
+	@Id
 	private String id;
-	private String name;
+
 	private String email;
-	private String pwd;
+	private String password;
+	private String nickname;
+	@Column(insertable=false, updatable=false)
 	private Date regDate;
+	@Column(columnDefinition="default")
 	private String photo;
 
 	public Member() {
 	}
 
-	public Member(String id, String name, String email, String pwd, Date regDate, String photo) {
+	public Member(String id, String email, String password, String nickname, Date regDate, String photo) {
 		this.id = id;
-		this.name = name;
 		this.email = email;
-		this.pwd = pwd;
+		this.password = password;
 		this.regDate = regDate;
 		this.photo = photo;
+		this.nickname = nickname;
 	}
 
 	public String getId() {
@@ -31,14 +40,6 @@ public class Member {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -47,12 +48,12 @@ public class Member {
 		this.email = email;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Date getRegDate() {
@@ -71,10 +72,12 @@ public class Member {
 		this.photo = photo;
 	}
 
-	@Override
-	public String toString() {
-		return "Member [id=" + id + ", name=" + name + ", email=" + email + ", pwd=" + pwd + ", regDate=" + regDate
-				+ ", photo=" + photo + "]";
+	public String getNickname() {
+		return nickname;
 	}
 
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	
 }

@@ -24,16 +24,16 @@ public class ServiceContextConfig {
 
 		// db 연결 설정
 		/*mssql-server*/
-		basicDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+/*		basicDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		basicDataSource.setUrl("jdbc:sqlserver://211.238.142.251:1433;databaseName=lecture");
 		basicDataSource.setUsername("sist");
-		basicDataSource.setPassword("dclass");
+		basicDataSource.setPassword("dclass");*/
 		
 		/*mysql*/
-/*		basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		basicDataSource.setUrl("jdbc:mysql://localhost/newlecturedb?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
+		basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		basicDataSource.setUrl("jdbc:mysql://honglecture.gonetis.com/spring5db?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
 		basicDataSource.setUsername("hong");
-		basicDataSource.setPassword("1234");*/
+		basicDataSource.setPassword("1234");
 
 		// 커넥션풀 설정
 		basicDataSource.setRemoveAbandoned(true);
@@ -48,13 +48,13 @@ public class ServiceContextConfig {
 	public LocalSessionFactoryBean sessionFactory() {
 		
 		Properties props = new Properties();
-		//props.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect"); 
-		props.put("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect"); //연결할 DB가 무엇인지 설정
+		props.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect"); 
+		//props.put("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect"); //연결할 DB가 무엇인지 설정
 		props.put("hibernate.show_sql", "true"); //콘솔에 찍어주세요
 		
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setDataSource(basicDataSource());
-		sessionFactoryBean.setPackagesToScan("com.newlecture.web.academy.entity"); //스캔할곳 설정
+		sessionFactoryBean.setPackagesToScan("com.tutorial.web.entity"); //스캔할곳 설정
 		sessionFactoryBean.setHibernateProperties(props); //map개체
 		
 		return sessionFactoryBean;

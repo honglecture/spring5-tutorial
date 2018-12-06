@@ -1,6 +1,5 @@
 package com.tutorial.web.config;
 
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,8 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity // 이 어노테이션으로 시큐리티 활성화
 public class SecurityContextConfig extends WebSecurityConfigurerAdapter  {
 
-	@Autowired
-	private BasicDataSource dataSource;
+//	@Autowired
+//	private BasicDataSource dataSource;
 
 	@Autowired
 	private UserDetailsService userDetailsService;

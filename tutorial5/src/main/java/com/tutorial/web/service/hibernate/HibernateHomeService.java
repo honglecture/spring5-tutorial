@@ -1,7 +1,9 @@
 package com.tutorial.web.service.hibernate;
 
-import com.tutorial.web.service.HomeService;
+import org.springframework.stereotype.Service;
 
+import com.tutorial.web.service.HomeService;
+@Service
 public class HibernateHomeService implements HomeService {
 
 	@Override
